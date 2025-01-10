@@ -1,7 +1,5 @@
-import { useParams } from "react-router-dom";
-import DefaultProfile from "./DefaultProfile";
-import Spinach from "./Spinach";
-import Popeye from "./Popeye";
+import { Link } from "react-router-dom";
+import { Outlet, useParams } from "react-router-dom";
 
 function Profile() {
   const { name } = useParams();
@@ -9,16 +7,14 @@ function Profile() {
   return (
     <div>
       <h1>Hello from profile page!</h1>
-      <p>Once again, que tal?</p>
       <hr />
-      <h2>The profile visited is here:</h2>
-      {name === "popeye" ? (
-        <Popeye />
-      ) : name === "spinach" ? (
-        <Spinach />
-      ) : (
-        <DefaultProfile />
-      )}
+      <div className="visit">
+        <p>Visit one of these</p>
+        <Link to="popeye">Popeye</Link>
+        <Link to="spinach">Spinach</Link>
+      </div>
+      <hr />
+      <Outlet />
     </div>
   );
 }
