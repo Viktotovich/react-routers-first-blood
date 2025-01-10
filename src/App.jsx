@@ -1,8 +1,18 @@
+import { Link } from "react-router-dom";
+
 function App() {
   return (
-    <>
-      <p>Hello World</p>
-    </>
+    <div>
+      <h1>Hello from the main page of the app!</h1>
+      <p>Here is a link to another page</p>
+      <nav>
+        <ul>
+          <li>
+            <Link to="profile">Profile Page</Link>
+          </li>
+        </ul>
+      </nav>
+    </div>
   );
 }
 
